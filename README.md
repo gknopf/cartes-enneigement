@@ -1,8 +1,11 @@
 # cartes-enneigement
 
-
 Objectif
 Afficher en cartes 3D  les limites d'enneigement des massifs Alpins sous forme de diaporama, pour visualiser l'évolution du domaine enneigé au cours d'une saison hivernale.
+
+Exemple de réalisation https://nivo06.knobuntu.fr/index.php/cryoland
+
+
 Contraintes
 
     L'extraction doit etre rapide:

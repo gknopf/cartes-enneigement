@@ -1,7 +1,7 @@
 # cartes-enneigement
-Elaboration des cartes 3D  de la limite d'enneigement des Alpes au cour d'une saison hivernale
-Objectif
 
+
+Objectif
 Afficher en cartes 3D  les limites d'enneigement des massifs Alpins sous forme de diaporama, pour visualiser l'évolution du domaine enneigé au cours d'une saison hivernale.
 Contraintes
 

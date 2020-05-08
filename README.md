@@ -70,3 +70,9 @@ Pour la visualisation d'une carte le programme va calculer la carte precédente 
 Dans le fichier Qgis2Threejs.js la position de la caméra est calculée dans la fonction currentViewURL() qui renvoie une URL Je vais utiliser cette fonction dans l'évenement <mouseUP>( lignes 790 et suivantes) pour envoer cette URL par une commande AJAX  au fichier fsc.php qui la transmet au fichier principal comme variable de session.
 
 Je vais ainsi orienter les autres cartes du diaporama avec la même position de la camera.
+
+Apres quelques essais la qualité de visualisation a 96 dpi n'est pas suffisante le fichier jpeg de couverture a maintenant une résolution de 150 dpi le fichier a aussi grossi à 800 Ko ce qui a necessité quelques arrangements dans cartesFSC.py
+Pour l'export,remplacemet de canvas. saveImage  par
+canvas.mapsettings()setdevicePixelRatio(1.5) et 
+job = QgsMapRendererSequentialJob(mapsettings) pour extraire l'image
+image=job.renderImage()

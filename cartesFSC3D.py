@@ -131,14 +131,23 @@ for bassin in listebassin:
     exporter.loadSettings(path_to_settings)
     exporter.setMapSettings(mapSettings)
 
-    exporter.initWebPage(1024, 768)                       # output image size
+    #exporter.initWebPage(1024, 768)                       # output image size
     exporter.export(filename, cameraState=CAMERA)
     # Coordonnees de transformation de wgs en lambert (non utilise lesysteme de reference est deja 2154)
 
     
     # exportation de la texture
     couvertureUri="/home/knobuntu/QGis/cryoland/FSC3D/data/" + bassin + fscusuel +"/"+bassin+fscusuel+".jpeg"
-    canvas.saveAsImage( couvertureUri,None,"JPEG")
+    mapsettings =canvas.mapSettings()
+    
+    mapsettings.setDevicePixelRatio(1.5)
+    job = QgsMapRendererSequentialJob(mapsettings)
+    job.start()
+    job.waitForFinished()
+    image = job.renderedImage()
+    image.save(couvertureUri,"jpeg")       # meilleure qualité d'image 150dpi
+
+    # canvas.saveAsImage( couvertureUri,None,"JPEG")
     print (couvertureUri)
     # tableau des lieux a exporter
 
